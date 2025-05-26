@@ -1,0 +1,71 @@
+name: Download M3U Files
+
+on:
+  workflow_dispatch: # Allows you to trigger the workflow manually from the GitHub UI
+  schedule:
+    - cron: '5,35 * * * *' # Runs every hour at :05 and :35 minutes past the hour UTC
+
+jobs:
+  download-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        # The default GITHUB_TOKEN has sufficient permissions for pushing to the same repository.
+        # No 'token:' needed here.
+
+      - name: Create downloads directory
+        run: mkdir -p downloads
+
+      - name: Download M3U Files
+        run: |
+          # Exit script on any error and treat pipe failures as errors
+          set -eo pipefail
+
+          URL_FILE="m3u_urls.txt" # Define the source file for URLs
+
+          if [[ ! -f "$URL_FILE" ]]; then
+            echo "Error: URL file '$URL_FILE' not found."
+            exit 1
+          fi
+
+          echo "Reading URLs from $URL_FILE..."
+          while IFS= read -r url || [[ -n "$url" ]]; do
+            # Skip empty lines and lines starting with # (comments)
+            if [[ -z "$url" ]] || [[ "$url" == \#* ]]; then
+              continue
+            fi
+
+            # Extract filename from URL and remove query parameters for a cleaner name
+            filename_with_query=$(basename "$url")
+            filename="${filename_with_query%%\?*}" # Removes everything after '?'
+
+            if [[ -z "$filename" ]]; then
+              echo "Warning: Could not determine a valid filename for URL: $url. Skipping."
+              continue
+            fi
+
+            echo "Downloading $filename from $url..."
+            # -sS: Silent mode, but still show errors
+            # -L: Follow redirects
+            # --fail: Exit with an error code on HTTP server errors (4xx, 5xx)
+            # --connect-timeout 10: Timeout for connection phase
+            # --max-time 30: Maximum time for the whole operation
+            # Consider adding --retry 3 --retry-delay 5 for more resilience
+            curl -sS -L --fail --connect-timeout 10 --max-time 30 \
+              -o "downloads/$filename" "$url"
+          done < "$URL_FILE"
+
+          echo "All M3U files processed."
+
+      - name: Commit and push downloaded M3U files to main/master
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update M3U files"
+          file_pattern: downloads/*.m3u downloads/**/*.m3u
+          # The default GITHUB_TOKEN is used here. No 'token:' needed.
+          # The action will commit to the branch it was checked out from (e.g., main/master).
+          commit_user_name: "GitHub Actions"
+          commit_user_email: "actions@github.com"
+          # push_options: '--force' # Uncomment if you need to force push (use with caution)
+          
