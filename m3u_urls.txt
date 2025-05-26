@@ -1,4 +1,3 @@
-https://github.com/iptv-org/iptv/raw/refs/heads/master/streams/us_moveonjoy.m3u
 
 https://bit.ly/moj-m3u8
 
