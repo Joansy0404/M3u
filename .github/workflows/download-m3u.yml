@@ -1,4 +1,4 @@
-name: Download M3U Files
+name: Download M3U/M3U8 Files # Changed name to reflect M3U8 handling
 
 on:
   workflow_dispatch: # Allows you to trigger the workflow manually from the GitHub UI
@@ -17,9 +17,7 @@ jobs:
         # The default GITHUB_TOKEN has sufficient permissions for pushing to the same repository,
         # provided the 'contents: write' permission is granted at the workflow level.
 
-      # Removed: - name: Create downloads directory (no longer needed as files go to root)
-
-      - name: Download M3U Files
+      - name: Download M3U/M3U8 Files # Changed step name
         run: |
           # Exit script on any error and treat pipe failures as errors
           set -eo pipefail
@@ -53,19 +51,19 @@ jobs:
             # --fail: Exit with an error code on HTTP server errors (4xx, 5xx)
             # --connect-timeout 10: Timeout for connection phase
             # --max-time 30: Maximum time for the whole operation
-            # --output: Changed output path to current directory, not 'downloads/'
+            # --output: Downloads the file directly to the current directory
             curl -sS -L --fail --connect-timeout 10 --max-time 30 \
               --output "$filename" "$url"
           done < "$URL_FILE"
 
-          echo "All M3U files processed."
+          echo "All M3U/M3U8 files processed." # Changed message
 
-      - name: Commit and push downloaded M3U files to M3u branch root
+      - name: Commit and push downloaded M3U/M3U8 files to M3u branch root # Changed step name
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update M3U files"
-          # Changed file_pattern to look for .m3u files directly in the root
-          file_pattern: "*.m3u"
+          commit_message: "Update M3U/M3U8 files" # Changed commit message
+          # Updated file_pattern to look for both .m3u and .m3u8 files directly in the root
+          file_pattern: "*.m3u *.m3u8"
           # The default GITHUB_TOKEN is used here.
           commit_user_name: "GitHub Actions"
           commit_user_email: "actions@github.com"
