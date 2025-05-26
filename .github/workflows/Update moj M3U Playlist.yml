@@ -6,15 +6,15 @@ on:
       layout_url:
         description: 'URL of the M3U file for the layout (e.g., moveonjoy pigz.txt)'
         required: true
-        default: 'https://github.com/pigzillaaaaa/iptv-scraper/raw/refs/heads/main/moveonjoy.m3u8' # Updated default URL
+        default: 'https://github.com/pigzillaaaaa/iptv-scraper/raw/refs/heads/main/moveonjoy.m3u8'
       stream_links_url:
         description: 'URL of the M3U file with new stream links (e.g., us_moveonjoy IPTV org.txt)'
         required: true
-        default: 'https://github.com/iptv-org/iptv/raw/refs/heads/master/streams/us_moveonjoy.m3u' # Updated default URL
+        default: 'https://github.com/iptv-org/iptv/raw/refs/heads/master/streams/us_moveonjoy.m3u' # Corrected default URL
       output_filename:
         description: 'Name of the output M3U file'
         required: true
-        default: 'updated_moveonjoy_playlist.m3u' # Changed default output filename
+        default: 'updated_moveonjoy_playlist.m3u'
 
 jobs:
   update_m3u:
@@ -34,7 +34,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x' # Specify your desired Python version, e.g., '3.9' or '3.10'
+          python-version: '3.x'
 
       - name: Run M3U update script
         run: |
@@ -44,4 +44,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Automated: Update M3U playlist"
-          file_pattern: "*.m3u" # Commit only .m3u files
+          file_pattern: "*.m3u"
