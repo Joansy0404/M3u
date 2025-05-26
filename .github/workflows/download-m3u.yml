@@ -5,13 +5,17 @@ on:
   schedule:
     - cron: '5,35 * * * *' # Runs every hour at :05 and :35 minutes past the hour UTC
 
+permissions:
+  contents: write # <--- ADD THIS BLOCK TO GRANT WRITE PERMISSIONS
+
 jobs:
   download-files:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        # The default GITHUB_TOKEN has sufficient permissions for pushing to the same repository.
+        # The default GITHUB_TOKEN has sufficient permissions for pushing to the same repository,
+        # provided the 'contents: write' permission is granted at the workflow level.
         # No 'token:' needed here.
 
       - name: Create downloads directory
@@ -58,14 +62,13 @@ jobs:
 
           echo "All M3U files processed."
 
-      - name: Commit and push downloaded M3U files to main/master
+      - name: Commit and push downloaded M3U files to M3u branch
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update M3U files"
           file_pattern: downloads/*.m3u downloads/**/*.m3u
           # The default GITHUB_TOKEN is used here. No 'token:' needed.
-          # The action will commit to the branch it was checked out from (e.g., main/master).
+          # The action will commit to the branch it was checked out from (M3u branch).
           commit_user_name: "GitHub Actions"
           commit_user_email: "actions@github.com"
           # push_options: '--force' # Uncomment if you need to force push (use with caution)
-          
