@@ -1,0 +1,47 @@
+name: Update M3U Playlist
+
+on:
+  workflow_dispatch:
+    inputs:
+      layout_url:
+        description: 'URL of the M3U file for the layout (e.g., moveonjoy pigz.txt)'
+        required: true
+        default: 'https://github.com/pigzillaaaaa/iptv-scraper/raw/refs/heads/main/moveonjoy.m3u8' # Updated default URL
+      stream_links_url:
+        description: 'URL of the M3U file with new stream links (e.g., us_moveonjoy IPTV org.txt)'
+        required: true
+        default: 'https://github.com/iptv-org/iptv/raw/refs/heads/master/streams/us_moveonjoy.m3u' # Updated default URL
+      output_filename:
+        description: 'Name of the output M3U file'
+        required: true
+        default: 'updated_moveonjoy_playlist.m3u' # Changed default output filename
+
+jobs:
+  update_m3u:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download layout M3U file
+        run: |
+          curl -o layout.m3u ${{ github.event.inputs.layout_url }}
+
+      - name: Download stream links M3U file
+        run: |
+          curl -o stream_links.m3u ${{ github.event.inputs.stream_links_url }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x' # Specify your desired Python version, e.g., '3.9' or '3.10'
+
+      - name: Run M3U update script
+        run: |
+          python update_m3u.py layout.m3u stream_links.m3u ${{ github.event.inputs.output_filename }}
+
+      - name: Commit updated file
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Automated: Update M3U playlist"
+          file_pattern: "*.m3u" # Commit only .m3u files
