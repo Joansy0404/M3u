@@ -1,5 +1,5 @@
 
-https://bit.ly/moj-m3u8
+https://github.com/iptv-org/iptv/raw/refs/heads/master/streams/us_moveonjoy.m3u
 
 https://raw.githubusercontent.com/iptv-org/iptv/refs/heads/master/streams/uk.m3u
 
