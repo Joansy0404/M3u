@@ -3,7 +3,7 @@ name: Download M3U/M3U8 Files # Changed name to reflect M3U8 handling
 on:
   workflow_dispatch: # Allows you to trigger the workflow manually from the GitHub UI
   schedule:
-    - cron: '5,35 * * * *' # Runs every hour at :05 and :35 minutes past the hour UTC
+    - cron: '' # Runs every hour at :05 and :35 minutes past the hour UTC
 
 permissions:
   contents: write # Grant write permissions to the GITHUB_TOKEN
