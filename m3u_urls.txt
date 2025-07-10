@@ -1,9 +1,0 @@
-
-
-https://raw.githubusercontent.com/iptv-org/iptv/refs/heads/master/streams/uk.m3u
-
-https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/topembed-channels-tivimate.m3u8
-
-https://iptv-scraper-re.vercel.app/ppvland?timezone=gmt
-
-https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/tvpass-all.m3u8
