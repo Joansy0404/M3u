@@ -1,0 +1,54 @@
+name: Ultimate M3U Editor
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'config/**'
+      - 'editor/**'
+      - 'scripts/**'
+
+permissions:
+  contents: write
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+        
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        
+    - name: Install dependencies
+      run: |
+        pip install requests pycountry lxml beautifulsoup4
+        
+    - name: Run processing
+      run: |
+        echo "Running M3U processing..."
+        python scripts/main.py
+        
+    - name: Commit changes
+      run: |
+        git config user.name "M3U Editor Bot"
+        git config user.email "actions@github.com"
+        
+        git pull origin main --rebase || true
+        git add .
+        
+        if ! git diff --staged --quiet; then
+          CHANNEL_COUNT=$(grep -c '^#EXTINF' playlists/final.m3u 2>/dev/null || echo '0')
+          TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
+          
+          git commit -m "Auto-update M3U playlist - $TIMESTAMP | Channels: $CHANNEL_COUNT | By GitHub Actions"
+          git push origin main --force-with-lease || git push origin main
+        else
+          echo "No changes to commit"
+        fi
