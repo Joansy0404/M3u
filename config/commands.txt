@@ -1,0 +1,7 @@
+# Processing Commands
+# Define the processing pipeline
+IMPORT
+GROUP_BY_COUNTRY
+APPLY_EPG
+APPLY_LOGOS
+EXPORT

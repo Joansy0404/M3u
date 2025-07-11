@@ -1,0 +1,82 @@
+[2025-07-10 05:06:55] Starting Ultimate M3U Editor setup...
+[2025-07-10 05:06:55] Created directory: .github/workflows
+[2025-07-10 05:06:55] Created directory: config
+[2025-07-10 05:06:55] Created directory: editor
+[2025-07-10 05:06:55] Created directory: playlists
+[2025-07-10 05:06:55] Created directory: scripts
+[2025-07-10 05:06:55] Created directory: scripts/modules
+[2025-07-10 05:06:55] Created directory: logs
+[2025-07-10 05:06:55] Created directory: backups
+[2025-07-10 05:06:55] Created module: scripts/modules/__init__.py
+[2025-07-10 05:06:55] Created module: scripts/modules/config_manager.py
+[2025-07-10 05:06:55] Created module: scripts/modules/backup_manager.py
+[2025-07-10 05:06:55] Created module: scripts/modules/logger_config.py
+[2025-07-10 05:06:55] Created module: scripts/modules/channel_processor.py
+[2025-07-10 05:06:55] Created module: scripts/modules/file_handler.py
+[2025-07-10 05:06:55] Created module: scripts/modules/country_detector.py
+[2025-07-10 05:06:55] Created module: scripts/modules/quality_detector.py
+[2025-07-10 05:06:55] Created module: scripts/modules/duplicate_manager.py
+[2025-07-10 05:06:55] Created module: scripts/modules/channel_manager.py
+[2025-07-10 05:06:55] Created module: scripts/modules/group_filter.py
+[2025-07-10 05:06:55] Created module: scripts/modules/m3u_generator.py
+[2025-07-10 05:06:55] Created module: scripts/modules/stats_generator.py
+[2025-07-10 05:06:55] Created module: scripts/modules/setup.py
+[2025-07-10 05:06:55] ❌ Setup failed: name 'create_github_workflow' is not defined
+[2025-07-10 05:11:48] Starting Ultimate M3U Editor setup...
+[2025-07-10 05:11:48] Created directory: .github/workflows
+[2025-07-10 05:11:48] Created directory: config
+[2025-07-10 05:11:48] Created directory: editor
+[2025-07-10 05:11:48] Created directory: playlists
+[2025-07-10 05:11:48] Created directory: scripts
+[2025-07-10 05:11:48] Created directory: scripts/modules
+[2025-07-10 05:11:48] Created directory: logs
+[2025-07-10 05:11:48] Created directory: backups
+[2025-07-10 05:11:48] Created module: scripts/modules/__init__.py
+[2025-07-10 05:11:48] Created module: scripts/modules/config_manager.py
+[2025-07-10 05:11:48] Created module: scripts/modules/backup_manager.py
+[2025-07-10 05:11:48] Created module: scripts/modules/logger_config.py
+[2025-07-10 05:11:48] Created module: scripts/modules/channel_processor.py
+[2025-07-10 05:11:48] Created module: scripts/modules/file_handler.py
+[2025-07-10 05:11:48] Created module: scripts/modules/country_detector.py
+[2025-07-10 05:11:48] Created module: scripts/modules/quality_detector.py
+[2025-07-10 05:11:48] Created module: scripts/modules/duplicate_manager.py
+[2025-07-10 05:11:48] Created module: scripts/modules/channel_manager.py
+[2025-07-10 05:11:48] Created module: scripts/modules/group_filter.py
+[2025-07-10 05:11:48] Created module: scripts/modules/m3u_generator.py
+[2025-07-10 05:11:48] Created module: scripts/modules/stats_generator.py
+[2025-07-10 05:11:48] Created module: scripts/modules/setup.py
+[2025-07-10 05:11:48] Created GitHub workflow: .github/workflows/process.yml
+[2025-07-10 05:11:48] Enhanced config/providers.txt
+[2025-07-10 05:11:48] Enhanced config/epg_sources.txt
+[2025-07-10 05:11:48] Enhanced config/commands.txt
+[2025-07-10 05:11:48] Created scripts/utils.py
+[2025-07-10 05:11:48] Created scripts/main.py
+[2025-07-10 05:11:48] Created scripts/importer.py
+[2025-07-10 05:11:48] Created scripts/country_grouper.py
+[2025-07-10 05:11:48] Created scripts/epg_manager.py
+[2025-07-10 05:11:48] Created scripts/logo_manager.py
+[2025-07-10 05:11:48] Created scripts/exporter.py
+[2025-07-10 05:11:48] Created editor/custom_channels.txt
+[2025-07-10 05:11:48] Created README.md
+[2025-07-10 05:11:48] Created .gitignore
+[2025-07-10 05:11:48] ============================================================
+[2025-07-10 05:11:48] 🎉 SETUP COMPLETED SUCCESSFULLY!
+[2025-07-10 05:11:48] ============================================================
+[2025-07-10 05:11:48] 
+[2025-07-10 05:11:48] 📋 NEXT STEPS:
+[2025-07-10 05:11:48] 1. Add your M3U playlist URLs to config/providers.txt
+[2025-07-10 05:11:48] 2. Configure EPG sources in config/epg_sources.txt
+[2025-07-10 05:11:48] 3. Commit and push all files to your GitHub repository:
+[2025-07-10 05:11:48]    git add .
+[2025-07-10 05:11:48]    git commit -m 'Initial M3U Editor setup'
+[2025-07-10 05:11:48]    git push origin main
+[2025-07-10 05:11:48] 
+[2025-07-10 05:11:48] 4. Enable GitHub Actions in your repository settings
+[2025-07-10 05:11:48] 5. Check the Actions tab for automatic processing
+[2025-07-10 05:11:48] 6. Download your clean playlist from playlists/final.m3u
+[2025-07-10 05:11:48] 
+[2025-07-10 05:11:48] 📖 For detailed instructions, see README.md
+[2025-07-10 05:11:48] 🔍 Check processing.log for any issues
+[2025-07-10 05:11:48] 
+[2025-07-10 05:11:48] 🚀 Your IPTV playlist editor is ready!
+[2025-07-10 05:11:48] ✅ The channels.txt format has been FIXED!

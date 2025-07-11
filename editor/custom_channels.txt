@@ -1,0 +1,7 @@
+# Add your custom channels here
+# Format: [Channel Name]
+#         group: Group Name
+#         url: Stream URL
+#         logo: Logo URL
+#         epg: EPG ID
+

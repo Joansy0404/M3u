@@ -1,0 +1,4 @@
+# M3U Provider URLs
+# Add your IPTV playlist URLs here (one per line)
+https://forgejo.plainrock127.xyz/Mystique-Play/Mystique/raw/branch/main/mystique.m3u
+

@@ -1,0 +1,12 @@
+{
+  "validation": {
+    "validation_level": "standard",
+    "test_connectivity": false
+  },
+  "parser": {
+    "error_recovery": true
+  },
+  "processing": {
+    "remove_duplicates": true
+  }
+}

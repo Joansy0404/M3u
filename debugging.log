@@ -1,0 +1,90 @@
+[2025-07-11 15:30:10] [INFO] ======================================================================
+[2025-07-11 15:30:10] [INFO] 🚀 STARTING ENHANCED M3U EDITOR DEBUG SUITE
+[2025-07-11 15:30:10] [INFO] ======================================================================
+[2025-07-11 15:30:10] [INFO] 
+🔍 Testing Python Environment...
+[2025-07-11 15:30:10] [DEBUG] Testing Python environment...
+[2025-07-11 15:30:10] [INFO] ✅ Python version: 3.12.3
+[2025-07-11 15:30:10] [INFO] ✅ pip is available
+[2025-07-11 15:30:10] [WARNING] ⚠️ Not running in virtual environment
+[2025-07-11 15:30:10] [INFO] 
+🔍 Testing Dependencies...
+[2025-07-11 15:30:10] [DEBUG] Testing dependencies...
+[2025-07-11 15:30:10] [INFO] ✅ requests: installed
+[2025-07-11 15:30:10] [ERROR] ❌ pycountry: missing (required)
+[2025-07-11 15:30:10] [INFO] ✅ lxml: installed
+[2025-07-11 15:30:10] [ERROR] ❌ beautifulsoup4: missing (required)
+[2025-07-11 15:30:10] [ERROR] ❌ aiohttp: missing (required)
+[2025-07-11 15:30:10] [ERROR] ❌ aiofiles: missing (required)
+[2025-07-11 15:30:10] [INFO] ✅ urllib3: installed
+[2025-07-11 15:30:10] [ERROR] ❌ dnspython: missing (required)
+[2025-07-11 15:30:10] [ERROR] ❌ python-dateutil: missing (required)
+[2025-07-11 15:30:10] [INFO] ✅ validators: installed
+[2025-07-11 15:30:10] [ERROR] ❌ toml: missing (required)
+[2025-07-11 15:30:10] [INFO] ✅ yaml: installed
+[2025-07-11 15:30:10] [WARNING] ⚠️ asyncio-throttle: missing (optional)
+[2025-07-11 15:30:10] [WARNING] ⚠️ unicodedata2: missing (optional)
+[2025-07-11 15:30:10] [WARNING] ⚠️ matplotlib: missing (optional)
+[2025-07-11 15:30:10] [WARNING] ⚠️ pandas: missing (optional)
+[2025-07-11 15:30:10] [INFO] 
+🔍 Testing Directory Structure...
+[2025-07-11 15:30:10] [DEBUG] Testing directory structure...
+[2025-07-11 15:30:10] [INFO] ✅ .github/workflows: exists (3 items) - GitHub Actions workflows
+[2025-07-11 15:30:10] [INFO] ✅ config: exists (6 items) - Configuration files
+[2025-07-11 15:30:10] [INFO] ✅ editor: exists (2 items) - Channel editor files
+[2025-07-11 15:30:10] [INFO] ✅ playlists: exists (1 items) - M3U playlist files
+[2025-07-11 15:30:10] [INFO] ✅ scripts: exists (15 items) - Python processing scripts
+[2025-07-11 15:30:10] [INFO] ✅ scripts/modules: exists (16 items) - Python modules
+[2025-07-11 15:30:10] [INFO] ✅ logs: exists (1 items) - Log files
+[2025-07-11 15:30:10] [INFO] ✅ backups: exists (1 items) - Backup files
+[2025-07-11 15:30:10] [INFO] ✅ reports: exists (2 items) - Processing reports
+[2025-07-11 15:30:10] [INFO] 
+🔍 Testing Configuration Files...
+[2025-07-11 15:30:10] [DEBUG] Testing configuration files...
+[2025-07-11 15:30:10] [INFO] ✅ config/providers.txt: 1 entries - M3U provider URLs
+[2025-07-11 15:30:10] [INFO] ✅ config/epg_sources.txt: 1 entries - EPG source URLs
+[2025-07-11 15:30:10] [INFO] ✅ config/commands.txt: 5 entries - Processing commands
+[2025-07-11 15:30:10] [ERROR] ❌ config/workflow_config.json: missing - Workflow configuration
+[2025-07-11 15:30:10] [INFO] 🔧 Created sample file: config/workflow_config.json
+[2025-07-11 15:30:10] [INFO] ✅ editor/channels.txt: 11566 entries - Channel editor list
+[2025-07-11 15:30:10] [INFO] 
+🔍 Testing Script Files...
+[2025-07-11 15:30:10] [DEBUG] Testing script files...
+[2025-07-11 15:30:10] [INFO] ✅ scripts/main.py: valid Python syntax - Main processing script
+[2025-07-11 15:30:10] [INFO] ✅ scripts/universal_m3u_parser.py: valid Python syntax - Universal M3U parser
+[2025-07-11 15:30:10] [INFO] ✅ scripts/comprehensive_config_manager.py: valid Python syntax - Configuration manager
+[2025-07-11 15:30:10] [INFO] ✅ scripts/comprehensive_validator.py: valid Python syntax - Validation system
+[2025-07-11 15:30:10] [ERROR] ❌ scripts/error_recovery_manager.py: syntax error - unterminated string literal (detected at line 790) (error_recovery_manager.py, line 790)
+[2025-07-11 15:30:10] [INFO] ✅ scripts/utils.py: valid Python syntax - Utility functions
+[2025-07-11 15:30:10] [INFO] ✅ scripts/importer.py: valid Python syntax - M3U importer
+[2025-07-11 15:30:10] [INFO] ✅ scripts/country_grouper.py: valid Python syntax - Country grouping
+[2025-07-11 15:30:10] [INFO] ✅ scripts/epg_manager.py: valid Python syntax - EPG management
+[2025-07-11 15:30:10] [INFO] ✅ scripts/logo_manager.py: valid Python syntax - Logo management
+[2025-07-11 15:30:10] [INFO] ✅ scripts/exporter.py: valid Python syntax - Export functionality
+[2025-07-11 15:30:10] [INFO] ✅ scripts/modules/__init__.py: valid Python syntax - Module initializer
+[2025-07-11 15:30:10] [INFO] ✅ scripts/modules/helper.py: valid Python syntax - Helper functions
+[2025-07-11 15:30:10] [INFO] ✅ scripts/modules/processor.py: valid Python syntax - Processing module
+[2025-07-11 15:30:10] [INFO] ✅ scripts/modules/config_manager.py: valid Python syntax - Config management
+[2025-07-11 15:30:10] [INFO] ✅ scripts/modules/logger_config.py: valid Python syntax - Logging configuration
+[2025-07-11 15:30:10] [INFO] 
+🔍 Testing GitHub Workflows...
+[2025-07-11 15:30:10] [DEBUG] Testing GitHub workflows...
+[2025-07-11 15:30:10] [ERROR] ❌ .github/workflows/process.yml: invalid YAML - while scanning a simple key
+  in "<unicode string>", line 361, column 1:
+    🚀 Processed by Universal M3U Pro ... 
+    ^
+could not find expected ':'
+  in "<unicode string>", line 365, column 11:
+              # Push with force-with-lease for ... 
+              ^
+[2025-07-11 15:30:10] [ERROR] ❌ .github/workflows/debug_m3u_setup.yml: invalid YAML - while scanning a simple key
+  in "<unicode string>", line 153, column 1:
+    import sys
+    ^
+could not find expected ':'
+  in "<unicode string>", line 154, column 1:
+    import os
+    ^
+[2025-07-11 15:30:10] [INFO] 
+🔍 Testing Module Imports...
+[2025-07-11 15:30:10] [DEBUG] Testing module imports...
